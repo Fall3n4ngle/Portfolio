@@ -10,9 +10,9 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="mx-auto max-w-[900px] scroll-mt-24 lg:mb-20"
+      className="mx-auto max-w-[900px] scroll-mt-24 mb-20"
     >
-      <h2 className="mb-16 scroll-m-20 text-center text-3xl font-semibold tracking-tight first:mt-0">
+      <h2 className="mb-14 scroll-m-20 text-center text-3xl font-semibold tracking-tight first:mt-0">
         Projects
       </h2>
       <div className="flex flex-col gap-16">
