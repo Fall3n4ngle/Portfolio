@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
 
 @layer base {
   :root {
@@ -49,7 +48,7 @@
     --ring: 142.4 71.8% 29.2%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
@@ -57,4 +56,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.container {
+  @apply mx-auto max-w-[930px] px-[15px];
 }
