@@ -1,8 +1,8 @@
-import { Button, Sheet, SheetClose, SheetContent, SheetTrigger } from "@/ui";
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from "@/ui";
 import { cn } from "@/common/utils";
 import { Menu } from "lucide-react";
 import Link from "next/link";
-import { navigationItems } from "@/common/const";
+import { navigationItems } from "./const";
 
 export default function SidebarNavigation() {
   return (

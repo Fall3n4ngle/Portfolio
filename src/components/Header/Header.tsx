@@ -6,7 +6,7 @@ import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   return (
-    <header className="bg-bg-primary fixed left-0 top-0 z-50 w-full py-3">
+    <header className="bg-background fixed left-0 top-0 z-50 w-full py-3">
       <div className="container flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="md:hidden">

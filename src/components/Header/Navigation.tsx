@@ -1,4 +1,4 @@
-import { navigationItems } from "@/common/const";
+import { navigationItems } from "./const";
 import { cn } from "@/common/utils";
 import Link from "next/link";
 
