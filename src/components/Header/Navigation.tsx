@@ -15,8 +15,8 @@ export default function Navigation() {
               <Link
                 href={href}
                 className={cn(
-                  "relative z-20 inline-block rounded-3xl px-[15px] py-[5px] text-text-primary/70 transition-all hover:text-text-primary",
-                  isActive && "text-primary-foreground"
+                  "text-text-primary/70 hover:text-text-primary relative z-20 inline-block rounded-3xl px-[15px] py-[5px] transition-all",
+                  isActive && "text-primary-foreground",
                 )}
               >
                 {label}

@@ -10,7 +10,7 @@ export default function SidebarNavigation() {
       <SheetTrigger asChild>
         <Menu className="h-6 w-6" />
       </SheetTrigger>
-      <SheetContent className="flex w-full items-center justify-center bg-bg-secondary min-[440px]:max-w-[384px]">
+      <SheetContent className="bg-bg-secondary flex w-full items-center justify-center min-[440px]:max-w-[384px]">
         <nav>
           <ul className="flex flex-col items-center gap-3">
             {navigationItems.map(({ href, label }, index) => {
@@ -21,8 +21,8 @@ export default function SidebarNavigation() {
                   <Link href={href}>
                     <SheetClose
                       className={cn(
-                        "inline-block rounded-3xl px-10 py-2 text-xl text-text-primary/70 transition-all",
-                        isActive && "bg-primary text-primary-foreground"
+                        "text-text-primary/70 inline-block rounded-3xl px-10 py-2 text-xl transition-all",
+                        isActive && "bg-primary text-primary-foreground",
                       )}
                     >
                       {label}

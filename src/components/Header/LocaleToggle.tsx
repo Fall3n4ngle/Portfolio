@@ -19,7 +19,7 @@ export default function LocaleToggle() {
           variant="outline"
           className="flex items-center rounded-md p-2 transition-all"
         >
-          <Globe className="mr-1.5 h-4 w-4 text-text-secondary" />
+          <Globe className="text-text-secondary mr-1.5 h-4 w-4" />
           <span className="text-lg">en</span>
         </Button>
       </DropdownMenuTrigger>
