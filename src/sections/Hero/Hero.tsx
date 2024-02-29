@@ -9,13 +9,11 @@ export default function Hero() {
       className="relative flex h-screen max-h-[600px] scroll-mt-24 items-center justify-center gap-24 text-center"
     >
       <div className="max-w-[750px]">
-        <h3 className="mb-2 scroll-m-20 text-2xl font-semibold tracking-tight">
-          Hi, I'm Olexander
-        </h3>
-        <h1 className="mb-5 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+        <h3 className="h3 mb-2">Hi, I'm Olexander</h3>
+        <h1 className="h1 mb-5">
           I'm a <span className="text-primary">Frontend Developer</span>
         </h1>
-        <p className="mb-6 text-xl text-muted-foreground leading-8">
+        <p className="lead mb-6">
           I specialize in building <strong>modern</strong>,{" "}
           <strong>responsive</strong>, <strong>fast</strong>,{" "}
           <strong>seo-friendly</strong> and <strong>accessible</strong>{" "}

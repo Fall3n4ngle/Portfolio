@@ -10,7 +10,7 @@ export default function SidebarNavigation() {
       <SheetTrigger asChild>
         <Menu className="h-6 w-6" />
       </SheetTrigger>
-      <SheetContent className="bg-bg-secondary flex w-full items-center justify-center min-[440px]:max-w-[384px]">
+      <SheetContent className="bg-background flex w-full items-center justify-center min-[440px]:max-w-[384px]">
         <nav>
           <ul className="flex flex-col items-center gap-3">
             {navigationItems.map(({ href, label }, index) => {

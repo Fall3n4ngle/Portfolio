@@ -40,10 +40,8 @@ export default function ProjectCard({
             <Badge key={category}>{category}</Badge>
           ))}
         </div>
-        <h4 className="mb-1.5 scroll-m-20 text-xl font-semibold tracking-tight text-primary">
-          {title}
-        </h4>
-        <p className="mb-4 text-sm tracking-wide text-muted-foreground md:text-base lg:mb-6">
+        <h4 className="h4 mb-1.5 text-primary">{title}</h4>
+        <p className="mb-4  text-sm leading-7 tracking-wide text-muted-foreground md:text-base lg:mb-6">
           {description}
         </p>
         <div className=" flex items-center justify-center gap-3 sm:justify-start">

@@ -3,7 +3,7 @@ import { Mail, Phone, Github } from "lucide-react";
 export default function ContactsInfo() {
   return (
     <div>
-      <p className="mb-10 text-center text-xl text-muted-foreground sm:text-left leading-[1.85rem]">
+      <p className="lead mb-10 text-center sm:text-left">
         Feel free to reach out with any inquiries, collaborations, or projects!
         I&apos;m passionate about creating engaging web experiences and would
         love to connect with you.
