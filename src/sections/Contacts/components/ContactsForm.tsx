@@ -37,7 +37,7 @@ export default function ContactsForm() {
       form.reset();
       return;
     }
-    
+
     toast.error(result.error);
   };
 

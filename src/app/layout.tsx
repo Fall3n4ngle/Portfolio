@@ -15,7 +15,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>
-          <div className="flex min-h-screen flex-col overflow-hidden">
+          <div className="relative flex min-h-screen flex-col overflow-hidden">
             <Header />
             <main className="grow">{children}</main>
           </div>

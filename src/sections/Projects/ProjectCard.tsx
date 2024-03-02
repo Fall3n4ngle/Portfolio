@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import { Badge, Button } from "@/ui";
+import { buttonVariants } from "@/ui";
 import Link from "next/link";
 import { Github } from "lucide-react";
 import { cn } from "@/common/utils";
@@ -35,32 +35,44 @@ export default function ProjectCard({
           "sm:order-2": direction === "rtl",
         })}
       >
-        <div className="mb-4 flex items-center justify-center gap-3 sm:justify-start lg:mb-5">
-          {categories.map((category) => (
-            <Badge key={category}>{category}</Badge>
+        <div className="mb-4 flex items-center justify-center gap-4 sm:justify-start lg:mb-5">
+          {categories.map((category, index) => (
+            <span key={category} className="italic text-muted-foreground">
+              {category}
+              {index !== categories.length - 1 && ","}
+            </span>
           ))}
         </div>
-        <h4 className="h4 mb-1.5 text-primary">{title}</h4>
+        <h3 className="h4 mb-1.5 text-primary">{title}</h3>
         <p className="mb-4  text-sm leading-7 tracking-wide text-muted-foreground md:text-base lg:mb-6">
           {description}
         </p>
         <div className=" flex items-center justify-center gap-3 sm:justify-start">
-          <Link href={siteLink} target="_blank">
-            <Button
-              variant="secondary"
-              className="hover:bg-primary hover:text-primary-foreground"
-            >
-              View site
-            </Button>
+          <Link
+            href={siteLink}
+            target="_blank"
+            className={cn(
+              buttonVariants({
+                variant: "secondary",
+              }),
+              "hover:bg-primary hover:text-primary-foreground",
+            )}
+          >
+            View site
           </Link>
-          <Link href={githubLink} target="_blank">
-            <Button
-              size="icon"
-              variant="secondary"
-              className="hover:bg-primary hover:text-primary-foreground"
-            >
-              <Github className="h-6 w-6" />
-            </Button>
+          <Link
+            href={githubLink}
+            className={cn(
+              buttonVariants({
+                variant: "secondary",
+                size: "icon",
+              }),
+              "hover:bg-primary hover:text-primary-foreground",
+            )}
+            target="_blank"
+            aria-label="Github"
+          >
+            <Github className="h-6 w-6" />
           </Link>
         </div>
       </div>
