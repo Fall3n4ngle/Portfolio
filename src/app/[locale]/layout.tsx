@@ -3,20 +3,24 @@ import { Inter } from "next/font/google";
 import { Providers } from "@/providers";
 import { Header } from "@/sections/Header";
 import { ScrollToTop } from "@/ui";
+import { ReactElement } from "react";
+import { getStaticParams } from "@/lib/i18n/server";
 
-import "./globals.css";
+import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
+  params: { locale },
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  params: { locale: string };
+  children: ReactElement;
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <Providers>
+        <Providers locale={locale}>
           <div className="relative flex min-h-screen flex-col overflow-hidden">
             <Header />
             <main className="grow">{children}</main>
@@ -26,6 +30,10 @@ export default function RootLayout({
       </body>
     </html>
   );
+}
+
+export function generateStaticParams() {
+  return getStaticParams();
 }
 
 export const metadata: Metadata = {

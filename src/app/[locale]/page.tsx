@@ -3,7 +3,7 @@ import { Hero } from "@/sections/Hero";
 import { Projects } from "@/sections/Projects";
 import { Skills } from "@/sections/Skills";
 
-export default function Home() {
+export default function IndexPage() {
   return (
     <div className="container">
       <Hero />
