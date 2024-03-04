@@ -58,6 +58,11 @@
   }
 }
 
+html,
+body {
+  @apply scroll-smooth;
+}
+
 .container {
   @apply mx-auto max-w-[930px] px-[15px];
 }

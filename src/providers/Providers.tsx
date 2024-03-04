@@ -2,6 +2,7 @@ import { PropsWithChildren } from "react";
 import { ThemeProvider } from "./Theme";
 import { Toaster } from "@/ui";
 import { Check, X } from "lucide-react";
+import ActiveSectionProvider from "./ActiveSection";
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
@@ -32,7 +33,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           className: "!duration-200 !py-5",
         }}
       />
-      {children}
+      <ActiveSectionProvider>{children}</ActiveSectionProvider>
     </ThemeProvider>
   );
 }

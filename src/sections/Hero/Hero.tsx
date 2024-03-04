@@ -4,12 +4,16 @@ import { Button } from "@/ui";
 import { ArrowDown, ArrowDownToLine } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { animationVariants } from "@/common/const";
+import { animationVariants, navigationItems } from "@/common/const";
+import { useSectionInView } from "@/common/hooks";
 
 export default function Hero() {
+  const { ref } = useSectionInView("home", 0.75);
+
   return (
     <section
-      id="home"
+      ref={ref}
+      id={navigationItems.home.id}
       className="relative flex h-screen max-h-[600px] scroll-mt-24 items-center justify-center gap-24 text-center"
     >
       <div className="max-w-[750px]">

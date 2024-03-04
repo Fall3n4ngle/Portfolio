@@ -1,13 +1,20 @@
 "use client";
 
-import { animationVariants } from "@/common/const";
+import { animationVariants, navigationItems } from "@/common/const";
 import ContactsForm from "./ContactsForm";
 import ContactsInfo from "./ContactsInfo";
 import { motion } from "framer-motion";
+import { useSectionInView } from "@/common/hooks";
 
 export default function Contacts() {
+  const { ref } = useSectionInView("contacts", 0.5);
+
   return (
-    <section id="contacts" className="mb-14 scroll-mt-24">
+    <section
+      ref={ref}
+      id={navigationItems.contacts.id}
+      className="mb-14 scroll-mt-24"
+    >
       <motion.h2
         {...animationVariants}
         viewport={{ once: true }}

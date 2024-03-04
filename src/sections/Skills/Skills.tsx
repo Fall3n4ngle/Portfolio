@@ -1,13 +1,17 @@
 "use client";
 
-import { animationVariants } from "@/common/const";
+import { animationVariants, navigationItems } from "@/common/const";
 import { skills } from "./const";
 import { motion } from "framer-motion";
+import { useSectionInView } from "@/common/hooks";
 
 export default function Skills() {
+  const { ref } = useSectionInView("skills", 1);
+
   return (
     <motion.section
-      id="skills"
+      ref={ref}
+      id={navigationItems.skills.id}
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}

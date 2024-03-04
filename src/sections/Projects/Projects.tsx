@@ -4,13 +4,19 @@ import { useTheme } from "next-themes";
 import ProjectCard from "./ProjectCard";
 import { projects } from "./const";
 import { motion } from "framer-motion";
-import { animationVariants } from "@/common/const";
+import { animationVariants, navigationItems } from "@/common/const";
+import { useSectionInView } from "@/common/hooks";
 
 export default function Projects() {
   const { theme } = useTheme();
+  const { ref } = useSectionInView("projects", 0.25);
 
   return (
-    <section id="projects" className="mx-auto mb-20 max-w-[900px] scroll-mt-24">
+    <section
+      ref={ref}
+      id={navigationItems.projects.id}
+      className="mx-auto mb-20 max-w-[900px] scroll-mt-24"
+    >
       <motion.h2 {...animationVariants} className="h2 mb-14 text-center">
         Projects
       </motion.h2>
