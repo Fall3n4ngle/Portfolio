@@ -8,11 +8,16 @@ import {
   DropdownMenuTrigger,
 } from "@/ui";
 import { Globe } from "lucide-react";
-import { useChangeLocale, useCurrentLocale } from "@/lib/i18n/client";
+import {
+  useChangeLocale,
+  useCurrentLocale,
+  useScopedI18n,
+} from "@/lib/i18n/client";
 
 export default function LocaleToggle() {
   const changeLocale = useChangeLocale();
   const locale = useCurrentLocale();
+  const t = useScopedI18n("header.localeToggle");
 
   return (
     <DropdownMenu>
@@ -26,16 +31,16 @@ export default function LocaleToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuLabel>Pick a language</DropdownMenuLabel>
+        <DropdownMenuLabel>{t("title")}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem className="p-0">
           <button onClick={() => changeLocale("en")} className="p-2 text-left">
-            English (en)
+            {t("en")}
           </button>
         </DropdownMenuItem>
         <DropdownMenuItem className="p-0">
-          <button onClick={() => changeLocale("ua")} className="p-2 text-left">
-            Ukrainian (ua)
+          <button onClick={() => changeLocale("uk")} className="p-2 text-left">
+            {t("uk")}
           </button>
         </DropdownMenuItem>
       </DropdownMenuContent>

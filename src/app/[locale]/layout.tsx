@@ -18,7 +18,7 @@ export default function RootLayout({
   children: ReactElement;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={inter.className}>
         <Providers locale={locale}>
           <div className="relative flex min-h-screen flex-col overflow-hidden">

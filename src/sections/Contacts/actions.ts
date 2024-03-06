@@ -1,11 +1,11 @@
 "use server";
 
 import { resend } from "@/lib/resend";
-import { SendEmailFields, sendEmailSchema } from "./validations";
+import { SendEmailFields, createEmailSchema } from "./validations";
 import ContactFormEmail from "./email/ContactFormEmail";
 
 export const sendEmail = async (fields: SendEmailFields) => {
-  const parsed = sendEmailSchema.safeParse(fields);
+  const parsed = createEmailSchema().safeParse(fields);
 
   if (!parsed.success) {
     return {

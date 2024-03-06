@@ -1,8 +1,6 @@
-"use client";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { SendEmailFields, sendEmailSchema } from "../validations";
+import { SendEmailFields, createEmailSchema } from "../validations";
 import {
   Button,
   Form,
@@ -18,15 +16,22 @@ import { cn } from "@/common/utils";
 import { Loader2, Send } from "lucide-react";
 import { sendEmail } from "../actions";
 import { toast } from "sonner";
+import { useScopedI18n } from "@/lib/i18n/client";
 
 export default function ContactsForm() {
+  const t = useScopedI18n("contacts.form");
+
   const form = useForm<SendEmailFields>({
-    resolver: zodResolver(sendEmailSchema),
-    defaultValues: {
-      email: "",
-      message: "",
-      name: "",
-    },
+    resolver: zodResolver(
+      createEmailSchema({
+        nameRequired: t("errors.nameRequired"),
+        nameMin: t("errors.nameMin"),
+        emailRequired: t("errors.emailRequired"),
+        emailValid: t("errors.emailValid"),
+        messageRequired: t("errors.messageRequired"),
+        messageMin: t("errors.messageMin"),
+      }),
+    ),
   });
 
   const onSubmit = async (fields: SendEmailFields) => {
@@ -55,7 +60,8 @@ export default function ContactsForm() {
           render={({ field, fieldState: { error } }) => (
             <FormItem>
               <FormLabel>
-                Name <span className={cn(error && "text-destructive")}>*</span>
+                {t("name")}{" "}
+                <span className={cn(error && "text-destructive")}>*</span>
               </FormLabel>
               <FormControl>
                 <Input {...field} />
@@ -85,7 +91,7 @@ export default function ContactsForm() {
           render={({ field, fieldState: { error } }) => (
             <FormItem>
               <FormLabel>
-                Message{" "}
+                {t("message")}{" "}
                 <span className={cn(error && "text-destructive")}>*</span>
               </FormLabel>
               <FormControl>
@@ -103,7 +109,7 @@ export default function ContactsForm() {
             <Loader2 className="h-5 w-5 animate-spin" />
           ) : (
             <>
-              Send
+              {t("send")}
               <Send className="ml-2 h-5 w-5" />
             </>
           )}

@@ -1,13 +1,12 @@
+import { useScopedI18n } from "@/lib/i18n/client";
 import { Mail, Phone, Github } from "lucide-react";
 
 export default function ContactsInfo() {
+  const t = useScopedI18n("contacts");
+
   return (
     <div>
-      <p className="lead mb-10 text-center sm:text-left">
-        Feel free to reach out with any inquiries, collaborations, or projects!
-        I&apos;m passionate about creating engaging web experiences and would
-        love to connect with you.
-      </p>
+      <p className="lead mb-10 text-center sm:text-left">{t("message")}</p>
       <address className="flex flex-col items-center gap-3 sm:items-start">
         <a
           href="https://github.com/Fall3n4ngle"
