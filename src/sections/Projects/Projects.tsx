@@ -17,7 +17,7 @@ export default function Projects() {
     <section
       ref={ref}
       id={navigationItems.projects.id}
-      className="mx-auto mb-20 max-w-[900px] scroll-mt-24"
+      className="mx-auto mb-28 max-w-[900px] scroll-mt-24"
     >
       <motion.h2 {...animationVariants} className="h2 mb-14 text-center">
         {t("title")}

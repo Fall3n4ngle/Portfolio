@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import { buttonVariants } from "@/ui";
 import Link from "next/link";
-import { Github } from "lucide-react";
+import { LuGithub } from "react-icons/lu";
 import { cn } from "@/common/utils";
 import { Project } from "./types";
 
@@ -35,7 +35,11 @@ export default function ProjectCard({
           "sm:order-2": direction === "rtl",
         })}
       >
-        <div className="mb-4 flex items-center justify-center gap-4 sm:justify-start lg:mb-5">
+        <div
+          className={cn(
+            "mb-4 flex items-center justify-center gap-4 sm:justify-start lg:mb-5",
+          )}
+        >
           {categories.map((category, index) => (
             <span key={category} className="italic text-muted-foreground">
               {category}
@@ -72,7 +76,7 @@ export default function ProjectCard({
             target="_blank"
             aria-label="Github"
           >
-            <Github className="h-6 w-6" />
+            <LuGithub className="h-6 w-6" />
           </Link>
         </div>
       </div>

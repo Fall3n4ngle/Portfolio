@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 import { ThemeProvider } from "./Theme";
 import { Toaster } from "@/ui";
-import { Check, X } from "lucide-react";
+import { LuCheck, LuX } from "react-icons/lu";
 import ActiveSectionProvider from "./ActiveSection";
 import { I18nProviderClient } from "@/lib/i18n/client";
 
@@ -22,12 +22,12 @@ export default function RootLayout({ children, locale }: Props) {
           icons={{
             success: (
               <div className="mr-2 flex h-7 w-7 items-center justify-center rounded-full bg-primary">
-                <Check className="h-5 w-5 text-[#f8f8f7]" />
+                <LuCheck className="h-5 w-5 text-[#f8f8f7]" />
               </div>
             ),
             error: (
               <div className="mr-2 flex h-7 w-7 items-center justify-center rounded-full bg-destructive">
-                <X className="h-5 w-5 text-[#f8f8f7]" />
+                <LuX className="h-5 w-5 text-[#f8f8f7]" />
               </div>
             ),
           }}

@@ -7,7 +7,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/ui";
-import { Globe } from "lucide-react";
+import { LuGlobe } from "react-icons/lu";
 import {
   useChangeLocale,
   useCurrentLocale,
@@ -26,7 +26,7 @@ export default function LocaleToggle() {
           variant="outline"
           className="flex items-center rounded-md p-2 transition-all"
         >
-          <Globe className="text-text-secondary mr-1.5 h-4 w-4" />
+          <LuGlobe className="text-text-secondary mr-1.5 h-4 w-4" />
           <span className="text-lg">{locale}</span>
         </Button>
       </DropdownMenuTrigger>

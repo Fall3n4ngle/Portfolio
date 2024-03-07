@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/ui";
-import { ArrowDown, ArrowDownToLine } from "lucide-react";
+import { LuArrowDown, LuArrowDownToLine } from "react-icons/lu";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { animationVariants, navigationItems } from "@/common/const";
@@ -48,12 +48,12 @@ export default function Hero() {
           <Link href="#projects">
             <Button className="gap-1">
               {t("projectsButton")}
-              <ArrowDown className="h-5 w-5" />
+              <LuArrowDown className="h-5 w-5" />
             </Button>
           </Link>
           <Button variant="secondary" className="gap-1">
             {t("cvButton")}
-            <ArrowDownToLine className="h-5 w-5" />
+            <LuArrowDownToLine className="h-5 w-5" />
           </Button>
         </motion.div>
       </div>

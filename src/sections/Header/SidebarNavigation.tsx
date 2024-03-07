@@ -1,24 +1,27 @@
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from "@/ui";
 import { cn } from "@/common/utils";
-import { Menu } from "lucide-react";
+import { LuMenu } from "react-icons/lu";
 import Link from "next/link";
 import { NavigationKey, navigationItems } from "@/common/const";
 import { useActiveSection } from "@/providers";
+import { useScopedI18n } from "@/lib/i18n/client";
 
 export default function SidebarNavigation() {
   const { activeSection, scrollToSection } = useActiveSection();
+  const t = useScopedI18n("header.navigation")
 
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Menu className="h-6 w-6" />
+        <LuMenu className="h-6 w-6" />
       </SheetTrigger>
       <SheetContent className="flex w-full items-center justify-center bg-background min-[440px]:max-w-[384px]">
         <nav>
           <ul className="flex flex-col items-center gap-3">
             {Object.keys(navigationItems).map((key) => {
-              const { href, label, id } = navigationItems[key as NavigationKey];
+              const { href, id } = navigationItems[key as NavigationKey];
               const isActive = id === activeSection;
+              const label = t(key as NavigationKey);
 
               return (
                 <li key={id}>

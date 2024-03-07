@@ -13,7 +13,7 @@ import {
   Textarea,
 } from "@/ui";
 import { cn } from "@/common/utils";
-import { Loader2, Send } from "lucide-react";
+import { LuLoader2, LuSend } from "react-icons/lu";
 import { sendEmail } from "../actions";
 import { toast } from "sonner";
 import { useScopedI18n } from "@/lib/i18n/client";
@@ -106,11 +106,11 @@ export default function ContactsForm() {
           disabled={isSubmitting}
         >
           {isSubmitting ? (
-            <Loader2 className="h-5 w-5 animate-spin" />
+            <LuLoader2 className="h-5 w-5 animate-spin" />
           ) : (
             <>
               {t("send")}
-              <Send className="ml-2 h-5 w-5" />
+              <LuSend className="ml-2 h-5 w-5" />
             </>
           )}
         </Button>
