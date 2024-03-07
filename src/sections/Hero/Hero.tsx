@@ -1,12 +1,13 @@
 "use client";
 
+import { navigationItems } from "@/common/const";
+import { useSectionInView } from "@/common/hooks";
+import { animationVariants } from "@/common/const";
 import { Button } from "@/ui";
 import { LuArrowDown, LuArrowDownToLine } from "react-icons/lu";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { animationVariants, navigationItems } from "@/common/const";
-import { useSectionInView } from "@/common/hooks";
 import { useScopedI18n } from "@/lib/i18n/client";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const { ref } = useSectionInView("home", 0.75);
@@ -16,10 +17,10 @@ export default function Hero() {
     <section
       ref={ref}
       id={navigationItems.home.id}
-      className="relative flex h-screen max-h-[600px] scroll-mt-24 items-center justify-center gap-24 text-center"
+      className="relative flex h-screen max-h-[700px]  scroll-mt-24 items-center gap-24"
     >
-      <div className="max-w-[750px]">
-        <motion.h3 {...animationVariants} className="h3 mb-2">
+      <div className="text-center max-w-[800px] mx-auto">
+        <motion.h3 {...animationVariants} className="h3 mb-3">
           {t("subtitle")}
         </motion.h3>
         <motion.h1
@@ -27,7 +28,7 @@ export default function Hero() {
           transition={{
             delay: 0.1,
           }}
-          className="h1 mb-5"
+          className="h1 mb-6"
           dangerouslySetInnerHTML={{ __html: t("title") }}
         />
         <motion.p
@@ -35,7 +36,7 @@ export default function Hero() {
           transition={{
             delay: 0.2,
           }}
-          className="lead mb-6"
+          className="lead mb-8 leading-10"
           dangerouslySetInnerHTML={{ __html: t("info") }}
         />
         <motion.div

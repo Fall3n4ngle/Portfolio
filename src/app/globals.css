@@ -10,9 +10,9 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 142.1 76.2% 30.3%;
+    --primary: 142.1 76.2% 33.3%;
     --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 240 4.8% 95.9%;
+    --secondary: 240 4.8% 93.9%;
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
@@ -21,7 +21,7 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
+    --input: 240 5.9% 85%;
     --ring: 142.1 76.2% 36.3%;
     --radius: 1rem;
   }
@@ -41,10 +41,10 @@
     --muted-foreground: 240 5% 64.9%;
     --accent: 12 6.5% 15.1%;
     --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 85.7% 97.3%;
+    --destructive: 0 62.8% 40.6%;
+    --destructive-foreground: 0 85.7% 100%;
     --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
+    --input: 240 3.7% 18.9%;
     --ring: 142.4 71.8% 29.2%;
   }
 }
@@ -64,7 +64,7 @@ body {
 }
 
 .container {
-  @apply mx-auto max-w-[930px] px-[15px];
+  @apply mx-auto max-w-[1000px] px-[15px];
 }
 
 h1 {
@@ -85,4 +85,17 @@ h4 {
 
 .lead {
   @apply text-lg leading-[1.85rem] text-muted-foreground lg:text-xl;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-secondary;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-primary;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/90;
 }

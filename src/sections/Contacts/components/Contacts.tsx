@@ -24,7 +24,7 @@ export default function Contacts() {
       >
         {t("title")}
       </motion.h2>
-      <div className="mx-auto flex max-w-[900px] flex-col-reverse items-start gap-10 sm:flex-row md:gap-14">
+      <div className="mx-auto flex flex-col-reverse items-start gap-10 sm:flex-row md:gap-14">
         <motion.div
           {...animationVariants}
           viewport={{ once: true }}

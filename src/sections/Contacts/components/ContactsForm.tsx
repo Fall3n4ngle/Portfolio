@@ -32,6 +32,11 @@ export default function ContactsForm() {
         messageMin: t("errors.messageMin"),
       }),
     ),
+    defaultValues: {
+      email: "",
+      message: "",
+      name: "",
+    },
   });
 
   const onSubmit = async (fields: SendEmailFields) => {

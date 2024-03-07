@@ -10,7 +10,7 @@ import {
   SiTailwindcss,
   SiSanity,
   SiGithub,
-  SiPusher
+  SiWebpack 
 } from "react-icons/si";
 
 export const skills = [
@@ -55,8 +55,8 @@ export const skills = [
     Icon: SiSanity,
   },
   {
-    title: "Pusher",
-    Icon: SiPusher,
+    title: "Webpack",
+    Icon: SiWebpack,
   },
   {
     title: "Github",

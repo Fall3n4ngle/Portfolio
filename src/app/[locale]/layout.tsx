@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, } from "next/font/google";
+import { Inter } from "next/font/google";
 import { Providers } from "@/providers";
 import { Header } from "@/sections/Header";
 import { ScrollToTop } from "@/ui";
@@ -19,9 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${inter.className}`}>
         <Providers locale={locale}>
-          <div className="relative flex min-h-screen flex-col overflow-hidden">
+          <div className="relative flex min-h-screen flex-col overflow-hidden ">
             <Header />
             <main className="grow">{children}</main>
           </div>

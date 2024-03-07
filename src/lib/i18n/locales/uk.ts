@@ -20,7 +20,7 @@ export default {
   },
   hero: {
     title: "Я <strong class='text-primary'>Frontend Розробник</strong>",
-    subtitle: "Привіт, я Олександр",
+    subtitle: "Привіт, я Олександр 👋",
     info: "Я спеціалізуюся на створенні <strong>сучасних</strong>, <strong>адаптивних</strong>, <strong>швидких</strong>, <strong>seo-friendly</strong> та <strong>доступних</strong> веб-додатків за допомогою <strong>React.js</strong> та <strong>Next.js</strong>",
     projectsButton: "Проекти",
     cvButton: "Скачати CV",

@@ -5,7 +5,7 @@ import { skills } from "./const";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/common/hooks";
 import { useScopedI18n } from "@/lib/i18n/client";
-import { HoverEffect } from "@/ui";
+import SkillCard from "./SkillCard";
 
 export default function Skills() {
   const { ref } = useSectionInView("skills", 1);
@@ -21,8 +21,13 @@ export default function Skills() {
         {" "}
         {t("title")}
       </motion.h2>
-      <motion.div {...animationVariants}>
-        <HoverEffect items={skills} />
+      <motion.div
+        {...animationVariants}
+        className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6"
+      >
+        {skills.map((skill, id) => (
+          <SkillCard {...skill} key={id} />
+        ))}
       </motion.div>
     </section>
   );

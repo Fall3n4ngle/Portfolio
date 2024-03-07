@@ -20,7 +20,7 @@ export default {
   },
   hero: {
     title: "I'm a <strong class='text-primary'>Frontend Developer</strong>",
-    subtitle: "Hi, I'm Oleksandr",
+    subtitle: "Hi, I'm Oleksandr 👋",
     info: `
       I specialize in building <strong>modern</strong>,
       <strong>responsive</strong>, <strong>fast</strong>,
