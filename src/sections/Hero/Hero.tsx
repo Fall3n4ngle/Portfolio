@@ -17,10 +17,10 @@ export default function Hero() {
     <section
       ref={ref}
       id={navigationItems.home.id}
-      className="relative flex h-screen max-h-[700px]  scroll-mt-24 items-center gap-24"
+      className="relative flex h-screen max-h-[700px]  scroll-mt-24 items-center"
     >
       <div className="text-center max-w-[800px] mx-auto">
-        <motion.h3 {...animationVariants} className="h3 mb-3">
+        <motion.h3 {...animationVariants} className="h3 mb-2">
           {t("subtitle")}
         </motion.h3>
         <motion.h1
@@ -28,7 +28,7 @@ export default function Hero() {
           transition={{
             delay: 0.1,
           }}
-          className="h1 mb-6"
+          className="h1 mb-5"
           dangerouslySetInnerHTML={{ __html: t("title") }}
         />
         <motion.p
@@ -36,7 +36,7 @@ export default function Hero() {
           transition={{
             delay: 0.2,
           }}
-          className="lead mb-8 leading-10"
+          className="lead mb-7 leading-10"
           dangerouslySetInnerHTML={{ __html: t("info") }}
         />
         <motion.div

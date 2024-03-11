@@ -57,4 +57,9 @@ export default {
       },
     },
   },
+  metadata: {
+    title: "Oliiar Oleksandr's Portfolio",
+    description:
+      "Welcome to my personal portfolio website, a showcase of my skills demonstrated through my projects, complete with contact information",
+  },
 } as const;
