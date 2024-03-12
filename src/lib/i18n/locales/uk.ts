@@ -27,6 +27,7 @@ export default {
   },
   projects: {
     title: "Проекти",
+    list: [],
   },
   skills: {
     title: "Навички",

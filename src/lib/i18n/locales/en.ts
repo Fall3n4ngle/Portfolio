@@ -33,6 +33,7 @@ export default {
   },
   projects: {
     title: "Projects",
+    list: []
   },
   skills: {
     title: "Skills",

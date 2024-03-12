@@ -15,9 +15,9 @@ export default function Skills() {
     <section
       ref={ref}
       id={navigationItems.skills.id}
-      className="mb-28 scroll-mt-24"
+      className="mb-32 scroll-mt-24"
     >
-      <motion.h2 {...animationVariants} className="h2 mb-14 text-center">
+      <motion.h2 {...animationVariants} className="h2 mb-16 text-center">
         {" "}
         {t("title")}
       </motion.h2>

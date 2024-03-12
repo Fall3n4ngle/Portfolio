@@ -15,16 +15,16 @@ export default function Contacts() {
     <section
       ref={ref}
       id={navigationItems.contacts.id}
-      className="mb-14 scroll-mt-24"
+      className="mx-auto mb-14 max-w-[487px] scroll-mt-24 md:mx-0 md:max-w-fit"
     >
       <motion.h2
         {...animationVariants}
         viewport={{ once: true }}
-        className="h2 mb-14 text-center"
+        className="h2 mb-16 text-center"
       >
         {t("title")}
       </motion.h2>
-      <div className="mx-auto flex flex-col-reverse items-start gap-10 sm:flex-row md:gap-14">
+      <div className="mx-auto flex flex-col-reverse items-start gap-10 md:flex-row md:gap-14">
         <motion.div
           {...animationVariants}
           viewport={{ once: true }}
@@ -36,7 +36,7 @@ export default function Contacts() {
           {...animationVariants}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="sm:mt-7 sm:basis-1/2"
+          className="min-[810px]:mt-7 sm:basis-1/2"
         >
           <ContactsInfo />
         </motion.div>

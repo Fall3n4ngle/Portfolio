@@ -1,7 +1,6 @@
 import Image, { StaticImageData } from "next/image";
-import { buttonVariants } from "@/ui";
+import { Button } from "@/ui";
 import Link from "next/link";
-import { LuGithub } from "react-icons/lu";
 import { cn } from "@/common/utils";
 import { Project } from "./types";
 
@@ -20,63 +19,45 @@ export default function ProjectCard({
   direction,
 }: Props) {
   return (
-    <article className="flex flex-col items-center gap-7 sm:flex-row">
+    <article className="flex flex-col items-center gap-7 md:flex-row">
       <div
-        className={cn("relative aspect-[9/6] w-full sm:basis-1/2", {
-          "sm:order-2": direction === "ltr",
-          "sm:order-1": direction === "rtl",
+        className={cn("relative aspect-[9/6] w-full md:basis-1/2", {
+          "md:order-2": direction === "ltr",
+          "md:order-1": direction === "rtl",
         })}
       >
         <Image src={image} alt={title} fill className="rounded-xl" />
       </div>
       <div
-        className={cn("text-center sm:basis-1/2 sm:text-left", {
-          "sm:order-1": direction === "ltr",
-          "sm:order-2": direction === "rtl",
+        className={cn("p-4 text-center md:basis-1/2 md:text-left", {
+          "md:order-1": direction === "ltr",
+          "md:order-2": direction === "rtl",
         })}
       >
-        <div
+        <ul
           className={cn(
-            "mb-4 flex items-center justify-center gap-4 sm:justify-start lg:mb-5",
+            "flex items-center justify-center gap-4 md:justify-start mb-6",
           )}
         >
-          {categories.map((category, index) => (
-            <span key={category} className="italic text-muted-foreground">
+          {categories.map((category) => (
+            <li
+              key={category}
+              className="rounded-full bg-secondary px-4 py-1 text-sm font-semibold italic text-secondary-foreground"
+            >
               {category}
-              {index !== categories.length - 1 && ","}
-            </span>
+            </li>
           ))}
-        </div>
-        <h3 className="h4 mb-1.5 text-primary">{title}</h3>
-        <p className="mb-4  text-sm leading-7 tracking-wide text-muted-foreground md:text-base lg:mb-6">
+        </ul>
+        <h3 className="h4 mb-2.5 ">{title}</h3>
+        <p className="text-sm leading-7 tracking-wide text-muted-foreground md:text-base mb-7">
           {description}
         </p>
-        <div className=" flex items-center justify-center gap-3 sm:justify-start">
-          <Link
-            href={siteLink}
-            target="_blank"
-            className={cn(
-              buttonVariants({
-                variant: "secondary",
-              }),
-              "hover:bg-primary hover:text-primary-foreground",
-            )}
-          >
-            View site
+        <div className=" flex items-center justify-center gap-3 md:justify-start">
+          <Link href={siteLink} target="_blank">
+            <Button variant="link">View site</Button>
           </Link>
-          <Link
-            href={githubLink}
-            className={cn(
-              buttonVariants({
-                variant: "secondary",
-                size: "icon",
-              }),
-              "hover:bg-primary hover:text-primary-foreground",
-            )}
-            target="_blank"
-            aria-label="Github"
-          >
-            <LuGithub className="h-6 w-6" />
+          <Link href={githubLink} target="_blank">
+            <Button variant="link">Github</Button>
           </Link>
         </div>
       </div>
