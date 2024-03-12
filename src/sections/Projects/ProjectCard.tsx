@@ -2,11 +2,16 @@ import Image, { StaticImageData } from "next/image";
 import { Button } from "@/ui";
 import Link from "next/link";
 import { cn } from "@/common/utils";
-import { Project } from "./types";
 
-type Props = Omit<Project, "image"> & {
+type Props = {
   direction: "rtl" | "ltr";
   image: StaticImageData;
+  categories: string[];
+  title: string;
+  description: string;
+  siteLink: string;
+  githubLink: string;
+  viewSiteText: string;
 };
 
 export default function ProjectCard({
@@ -17,6 +22,7 @@ export default function ProjectCard({
   siteLink,
   title,
   direction,
+  viewSiteText
 }: Props) {
   return (
     <article className="flex flex-col items-center gap-7 md:flex-row">
@@ -36,25 +42,28 @@ export default function ProjectCard({
       >
         <ul
           className={cn(
-            "flex items-center justify-center gap-4 md:justify-start mb-6",
+            "mb-6 flex items-center justify-center gap-4 md:justify-start",
           )}
         >
           {categories.map((category) => (
             <li
               key={category}
-              className="rounded-full bg-secondary px-4 py-1 text-sm font-semibold italic text-secondary-foreground"
+              className="rounded-full bg-secondary px-4 py-[5px] text-sm font-semibold italic text-secondary-foreground"
             >
               {category}
             </li>
           ))}
         </ul>
         <h3 className="h4 mb-2.5 ">{title}</h3>
-        <p className="text-sm leading-7 tracking-wide text-muted-foreground md:text-base mb-7">
-          {description}
-        </p>
-        <div className=" flex items-center justify-center gap-3 md:justify-start">
+        <p
+          className="mb-7 text-sm leading-7 tracking-wide text-muted-foreground md:text-base"
+          dangerouslySetInnerHTML={{
+            __html: description,
+          }}
+        />
+        <div className=" flex items-center justify-center gap-1 md:justify-start">
           <Link href={siteLink} target="_blank">
-            <Button variant="link">View site</Button>
+            <Button variant="link">{viewSiteText}</Button>
           </Link>
           <Link href={githubLink} target="_blank">
             <Button variant="link">Github</Button>

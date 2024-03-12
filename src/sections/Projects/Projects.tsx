@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes";
 import ProjectCard from "./ProjectCard";
-import { projects } from "./const";
+import { ProjectKey, projects } from "./const";
 import { motion } from "framer-motion";
 import { animationVariants, navigationItems } from "@/common/const";
 import { useSectionInView } from "@/common/hooks";
@@ -12,6 +12,7 @@ export default function Projects() {
   const { theme } = useTheme();
   const { ref } = useSectionInView("projects", 0.25);
   const t = useScopedI18n("projects");
+  const viewSiteText = t("viewSiteText");
 
   return (
     <section
@@ -23,11 +24,16 @@ export default function Projects() {
         {t("title")}
       </motion.h2>
       <ul className="flex flex-col gap-16">
-        {projects.map(({ image, ...project }, index) => {
+        {Object.keys(projects).map((key, index) => {
+          const { image, ...data } = projects[key as ProjectKey];
+          const description = t(`${key as ProjectKey}.description`);
+
           return (
             <motion.li key={index} {...animationVariants}>
               <ProjectCard
-                {...project}
+                {...data}
+                description={description}
+                viewSiteText={viewSiteText}
                 image={theme === "dark" ? image.dark : image.light}
                 direction={index % 2 === 0 ? "rtl" : "ltr"}
               />

@@ -33,7 +33,15 @@ export default {
   },
   projects: {
     title: "Projects",
-    list: []
+    ecommerce: {
+      description:
+        "A fully functional ecommerce website that enables users to discover products they need through an advanced filtering system, add them to their cart, and make purchases. Application also features an admin dashboard which is accessible by <strong>/studio</strong> url.",
+    },
+    messenger: {
+      description:
+        "A group messaging app that uses Next.js and Pusher.js to enable realtime communication via text or file messages and audio-video conferences. It also allows users to have different roles in chats, such as viewer, editor or admin.",
+    },
+    viewSiteText: "View site",
   },
   skills: {
     title: "Skills",
