@@ -15,20 +15,22 @@ export default function Skills() {
     <section
       ref={ref}
       id={navigationItems.skills.id}
-      className="mb-32 scroll-mt-24"
+      className="mb-36 scroll-mt-24"
     >
-      <motion.h2 {...animationVariants} className="h2 mb-16 text-center">
+      <motion.h2 {...animationVariants} className="h2 mb-28 text-center">
         {" "}
         {t("title")}
       </motion.h2>
-      <motion.div
+      <motion.ul
         {...animationVariants}
-        className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6"
+        className="grid gap-y-12 grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6"
       >
         {skills.map((skill, id) => (
-          <SkillCard {...skill} key={id} />
+          <li key={id}>
+            <SkillCard {...skill} />
+          </li>
         ))}
-      </motion.div>
+      </motion.ul>
     </section>
   );
 }

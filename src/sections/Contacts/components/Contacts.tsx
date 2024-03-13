@@ -15,12 +15,12 @@ export default function Contacts() {
     <section
       ref={ref}
       id={navigationItems.contacts.id}
-      className="mx-auto mb-14 max-w-[487px] scroll-mt-24 md:mx-0 md:max-w-fit"
+      className="mx-auto mb-16 max-w-[487px] scroll-mt-24 md:mx-0 md:max-w-fit"
     >
       <motion.h2
         {...animationVariants}
         viewport={{ once: true }}
-        className="h2 mb-16 text-center"
+        className="h2 mb-24 text-center"
       >
         {t("title")}
       </motion.h2>

@@ -22,17 +22,27 @@ export default function ProjectCard({
   siteLink,
   title,
   direction,
-  viewSiteText
+  viewSiteText,
 }: Props) {
   return (
     <article className="flex flex-col items-center gap-7 md:flex-row">
       <div
-        className={cn("relative aspect-[9/6] w-full md:basis-1/2", {
-          "md:order-2": direction === "ltr",
-          "md:order-1": direction === "rtl",
-        })}
+        className={cn(
+          "relative aspect-[9/6.1] w-full overflow-hidden md:basis-1/2",
+          {
+            "md:order-2": direction === "ltr",
+            "md:order-1": direction === "rtl",
+          },
+        )}
       >
-        <Image src={image} alt={title} fill className="rounded-xl" />
+        <Link href={siteLink} target="_blank">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="absolute left-0 top-0 h-full w-full rounded-xl object-cover"
+          />
+        </Link>
       </div>
       <div
         className={cn("p-4 text-center md:basis-1/2 md:text-left", {

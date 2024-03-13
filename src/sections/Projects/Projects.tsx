@@ -18,12 +18,12 @@ export default function Projects() {
     <section
       ref={ref}
       id={navigationItems.projects.id}
-      className="mx-auto mb-32 scroll-mt-24"
+      className="mx-auto mb-36 scroll-mt-24"
     >
-      <motion.h2 {...animationVariants} className="h2 mb-16 text-center">
+      <motion.h2 {...animationVariants} className="h2 mb-24 text-center">
         {t("title")}
       </motion.h2>
-      <ul className="flex flex-col gap-16">
+      <ul className="flex flex-col gap-20">
         {Object.keys(projects).map((key, index) => {
           const { image, ...data } = projects[key as ProjectKey];
           const description = t(`${key as ProjectKey}.description`);
