@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Button } from "@/ui";
 import Link from "next/link";
 import { cn } from "@/common/utils";
 
 type Props = {
   direction: "rtl" | "ltr";
-  image: string;
+  image: StaticImageData;
   categories: string[];
   title: string;
   description: string;
