@@ -28,7 +28,7 @@ export default function Hero() {
           transition={{
             delay: 0.1,
           }}
-          className="h1 mb-5"
+          className="h1 mb-4"
           dangerouslySetInnerHTML={{ __html: t("title") }}
         />
         <motion.p
@@ -36,7 +36,7 @@ export default function Hero() {
           transition={{
             delay: 0.2,
           }}
-          className="lead mb-7 leading-10"
+          className="lead mb-6 leading-10"
           dangerouslySetInnerHTML={{ __html: t("info") }}
         />
         <motion.div

@@ -1,11 +1,11 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { Button } from "@/ui";
 import Link from "next/link";
 import { cn } from "@/common/utils";
 
 type Props = {
   direction: "rtl" | "ltr";
-  image: StaticImageData;
+  image: string;
   categories: string[];
   title: string;
   description: string;
@@ -50,11 +50,7 @@ export default function ProjectCard({
           "md:order-2": direction === "rtl",
         })}
       >
-        <ul
-          className={cn(
-            "mb-6 flex items-center justify-center gap-4 md:justify-start",
-          )}
-        >
+        <ul className="mb-6 flex w-full items-center justify-center gap-4 md:justify-start">
           {categories.map((category) => (
             <li
               key={category}
@@ -71,7 +67,7 @@ export default function ProjectCard({
             __html: description,
           }}
         />
-        <div className=" flex items-center justify-center gap-1 md:justify-start">
+        <div className="flex items-center justify-center gap-1 md:justify-start">
           <Link href={siteLink} target="_blank">
             <Button variant="link">{viewSiteText}</Button>
           </Link>

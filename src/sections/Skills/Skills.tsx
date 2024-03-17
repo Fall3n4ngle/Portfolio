@@ -23,7 +23,7 @@ export default function Skills() {
       </motion.h2>
       <motion.ul
         {...animationVariants}
-        className="grid gap-y-12 grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6"
+        className="grid grid-cols-3 gap-10 sm:grid-cols-4 md:grid-cols-5 md:gap-12 lg:grid-cols-6 lg:gap-14"
       >
         {skills.map((skill, id) => (
           <li key={id}>

@@ -8,7 +8,7 @@ import {
   Tailwind,
   Text,
 } from "@react-email/components";
-import { SendEmailFields } from "../validations";
+import { SendEmailFields } from "./validations";
 
 export default function ContactFormEmail({
   email,

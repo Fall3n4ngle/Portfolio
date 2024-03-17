@@ -1,8 +1,3 @@
-import messengerDark from "@/assets/projects/messenger-dark.png";
-import messengerLight from "@/assets/projects/messenger-light.png";
-import ecommerceLight from "@/assets/projects/ecommerce-light.png";
-import ecommerceDark from "@/assets/projects/ecommerce-dark.png";
-
 export const projects = {
   ecommerce: {
     categories: ["Next.js", "Sanity", "Stripe"],
@@ -10,8 +5,8 @@ export const projects = {
     githubLink: "https://github.com/Fall3n4ngle/ecommerce",
     siteLink: "https://ecommerce-amber-six.vercel.app",
     image: {
-      light: ecommerceLight,
-      dark: ecommerceDark,
+      light: "/projects/ecommerce-light.png",
+      dark: "/projects/ecommerce-dark.png",
     },
   },
   messenger: {
@@ -20,8 +15,8 @@ export const projects = {
     githubLink: "https://github.com/Fall3n4ngle/messenger",
     siteLink: "https://messanger-lovat.vercel.app/",
     image: {
-      light: messengerLight,
-      dark: messengerDark,
+      light: "/projects/messenger-light.png",
+      dark: "/projects/messenger-dark.png",
     },
   },
 };

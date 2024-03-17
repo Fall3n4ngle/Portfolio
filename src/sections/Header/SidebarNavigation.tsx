@@ -5,10 +5,11 @@ import Link from "next/link";
 import { NavigationKey, navigationItems } from "@/common/const";
 import { useActiveSection } from "@/providers";
 import { useScopedI18n } from "@/lib/i18n/client";
+import { motion } from "framer-motion";
 
 export default function SidebarNavigation() {
   const { activeSection, scrollToSection } = useActiveSection();
-  const t = useScopedI18n("header.navigation")
+  const t = useScopedI18n("header.navigation");
 
   return (
     <Sheet>
@@ -18,13 +19,18 @@ export default function SidebarNavigation() {
       <SheetContent className="flex w-full items-center justify-center bg-background min-[440px]:max-w-[384px]">
         <nav>
           <ul className="flex flex-col items-center gap-3">
-            {Object.keys(navigationItems).map((key) => {
+            {Object.keys(navigationItems).map((key, index) => {
               const { href, id } = navigationItems[key as NavigationKey];
               const isActive = id === activeSection;
               const label = t(key as NavigationKey);
 
               return (
-                <li key={id}>
+                <motion.li
+                  key={id}
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 + index * 0.1 }}
+                >
                   <Link href={href} onClick={() => scrollToSection(id)}>
                     <SheetClose
                       className={cn(
@@ -35,7 +41,7 @@ export default function SidebarNavigation() {
                       {label}
                     </SheetClose>
                   </Link>
-                </li>
+                </motion.li>
               );
             })}
           </ul>

@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { SendEmailFields, createEmailSchema } from "../validations";
+import { SendEmailFields, createEmailSchema } from "./validations";
 import {
   Button,
   Form,
@@ -14,7 +14,7 @@ import {
 } from "@/ui";
 import { cn } from "@/common/utils";
 import { LuLoader2, LuSend } from "react-icons/lu";
-import { sendEmail } from "../actions";
+import { sendEmail } from "./actions";
 import { toast } from "sonner";
 import { useScopedI18n } from "@/lib/i18n/client";
 

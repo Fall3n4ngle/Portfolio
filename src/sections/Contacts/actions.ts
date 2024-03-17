@@ -2,7 +2,7 @@
 
 import { resend } from "@/lib/resend";
 import { SendEmailFields, createEmailSchema } from "./validations";
-import ContactFormEmail from "./email/ContactFormEmail";
+import ContactFormEmail from "./ContactsFormEmail";
 
 export const sendEmail = async (fields: SendEmailFields) => {
   const parsed = createEmailSchema().safeParse(fields);
