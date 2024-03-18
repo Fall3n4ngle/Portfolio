@@ -19,7 +19,7 @@ export default function Hero() {
       id={navigationItems.home.id}
       className="relative flex h-screen max-h-[700px]  scroll-mt-24 items-center"
     >
-      <div className="text-center max-w-[800px] mx-auto">
+      <div className="mx-auto max-w-[800px] text-center">
         <motion.h3 {...animationVariants} className="h3 mb-2">
           {t("subtitle")}
         </motion.h3>
@@ -52,10 +52,12 @@ export default function Hero() {
               <LuArrowDown className="h-5 w-5" />
             </Button>
           </Link>
-          <Button variant="secondary" className="gap-1">
-            {t("cvButton")}
-            <LuArrowDownToLine className="h-5 w-5" />
-          </Button>
+          <Link href="/OleksandrOliiarCV.pdf" target="_blank">
+            <Button variant="secondary" className="gap-1">
+              {t("cvButton")}
+              <LuArrowDownToLine className="h-5 w-5" />
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>
