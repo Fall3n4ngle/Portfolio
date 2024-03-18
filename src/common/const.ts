@@ -1,8 +1,8 @@
 export const animationVariants = {
   initial: { opacity: 0, y: 100 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-};
+  viewport: { amount: "some", once: true },
+} as const;
 
 export const navigationItems = {
   home: {
