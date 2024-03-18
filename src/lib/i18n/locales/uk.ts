@@ -56,6 +56,8 @@ export default {
         messageRequired: "Повідомлення обов'язкове",
         messageMin: "Введіть як мінімум 2 символи",
       },
+      successMessage: "Плвідомення надіслано успішно",
+      errorMessage: "Не вдалося надіслати повідомлення",
     },
   },
   metadata: {

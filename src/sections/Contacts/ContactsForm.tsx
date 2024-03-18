@@ -43,12 +43,12 @@ export default function ContactsForm() {
     const result = await sendEmail(fields);
 
     if (result.success) {
-      toast.success("Sent email successfully");
+      toast.success(t("successMessage"));
       form.reset();
       return;
     }
 
-    toast.error(result.error);
+    toast.error(t("errorMessage"));
   };
 
   const { isSubmitting } = form.formState;

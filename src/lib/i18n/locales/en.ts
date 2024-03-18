@@ -64,6 +64,8 @@ export default {
         messageRequired: "Message is required",
         messageMin: "Message must be at least 2 characters",
       },
+      successMessage: "Sent message successfully",
+      errorMessage: "Failed to send message",
     },
   },
   metadata: {

@@ -20,7 +20,7 @@ export default function Projects() {
       id={navigationItems.projects.id}
       className="mx-auto mb-36 scroll-mt-24"
     >
-      <motion.h2 {...animationVariants} transition={{  }}  className="h2 mb-24 text-center">
+      <motion.h2 {...animationVariants} className="h2 mb-24 text-center">
         {t("title")}
       </motion.h2>
       <ul className="flex flex-col gap-20">
