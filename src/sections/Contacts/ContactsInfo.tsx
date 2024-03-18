@@ -1,6 +1,6 @@
 import { useScopedI18n } from "@/lib/i18n/client";
 import Link from "next/link";
-import { LuLinkedin, LuPhone, LuGithub } from "react-icons/lu";
+import { LuMail, LuPhone, LuGithub } from "react-icons/lu";
 
 export default function ContactsInfo() {
   const t = useScopedI18n("contacts");
@@ -25,7 +25,7 @@ export default function ContactsInfo() {
           target="_blank"
         >
           <div className="p-3">
-            <LuLinkedin className="h-6 w-6 " />
+            <LuMail className="h-6 w-6 " />
           </div>
           www.linkedin.com/in/oleksandr-oliiar
         </Link>
